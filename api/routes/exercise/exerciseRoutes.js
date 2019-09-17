@@ -1,11 +1,11 @@
 "use strict";
 
-const express = require(express);
+const express = require('express');
 const router = express();
-const { listExercise, createExercise } = require("./exerciseService");
+const { listExercises, createExercise } = require("./exerciseService");
 
 // GET /exercise
-router.route("/exercise").get(async (req, res, next) => {
+router.route("/").get(async (req, res, next) => {
   try {
     const exercises = await listExercises();
     res.status(200).send({
@@ -18,7 +18,7 @@ router.route("/exercise").get(async (req, res, next) => {
 });
 
 // POST /exercise - after MVP
-router.route("/exercise").post(async (req, res, next) => {
+router.route("/").post(async (req, res, next) => {
   const { exerciseData } = req.body;
   try {
     const exercise = await createExercise(exerciseData);

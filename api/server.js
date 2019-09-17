@@ -1,7 +1,6 @@
 "use strict";
 
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 const express = require("express");
 const http = require("http");
 
@@ -9,7 +8,8 @@ const http = require("http");
 const router = express();
 
 // 2. Require routes
-const { router: bookRoutes } = require("./routes/books/bookRoutes");
+// const { router: bookRoutes } = require("./routes/books/bookRoutes");
+const { router: exerciseRoutes } = require("./routes/exercise/exerciseRoutes");
 
 // 3. Require conatants
 const { URL, PORT } = require("./utils/constants");
@@ -22,7 +22,7 @@ const middleWare = require("./middleware");
 applyMiddleware(middleWare, router);
 
 // 5. Utilise routes
-router.use("/api/books", bookRoutes);
+router.use("/api/exercises", exerciseRoutes);
 
 // 6. Create a server from express instance
 const server = http.createServer(router);
