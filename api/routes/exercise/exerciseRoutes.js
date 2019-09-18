@@ -1,6 +1,6 @@
 "use strict";
 
-const express = require('express');
+const express = require("express");
 const router = express();
 const { listExercises, createExercise } = require("./exerciseService");
 
@@ -19,11 +19,11 @@ router.route("/").get(async (req, res, next) => {
 
 // POST /exercise - after MVP
 router.route("/").post(async (req, res, next) => {
-  const { exerciseData } = req.body;
+  console.log(req.body);
   try {
-    const exercise = await createExercise(exerciseData);
+    const exercise = await createExercise(req.body.data);
     res.status(201).send({
-      data: [exercise]
+      data: exercise
     });
   } catch (e) {
     next(e);
