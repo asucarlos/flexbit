@@ -9,7 +9,7 @@ const router = express();
 
 // 2. Require routes
 // const { router: bookRoutes } = require("./routes/books/bookRoutes");
-const { router: exerciseRoutes } = require("./routes/exercise/exerciseRoutes");
+const { router: exerciseRoutes } = require("./routes/exercises/exerciseRoutes");
 
 // 3. Require conatants
 const { URL, PORT } = require("./utils/constants");

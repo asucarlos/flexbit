@@ -14,12 +14,12 @@ const exerciseSchema = new Schema({
     // ??? how can we change this to mongo_id?
   },
   muscles: {
-    type: String
+    type: [String]
     // how can we say an array of strings
   },
-  category: {
-    type: String
-    // how can we say object should include additional information
+  _categoryId: {
+    type: Schema.Types.ObjectId,
+    require: true
   }
 });
 
