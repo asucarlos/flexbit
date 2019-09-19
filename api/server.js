@@ -24,7 +24,7 @@ applyMiddleware(middleWare, router);
 
 // 5. Utilise routes
 router.use("/api/exercises", exerciseRoutes);
-router.use("/api/users", userRoutes);
+router.use('/api/users', userRoutes)
 
 // 6. Create a server from express instance
 const server = http.createServer(router);

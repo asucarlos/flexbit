@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const userService = require("./userService");
-const tokenService = require("../../utils/tokenService");
+const userService = require('./userService');
+const tokenService = require('../../utils/tokenService');
 
 router.route("/signup").post(async (req, res, next) => {
   try {
