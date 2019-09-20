@@ -1,13 +1,17 @@
 # Project Proposal
 
 ## Project Name
-> *(Nothing fancy)*
+
+> _Flexbit_
 
 ## Description
-> *(240 characters or less, think tweet sized)*
+
+> _Fitness tracker_
 
 ## MVC Goals
-> *(Try and have 3-5 point form statements about what your app can do, don't try and be too technical)*
+
+> _(Try and have 3-5 point form statements about what your app can do, don't try and be too technical)_
 
 ## Stretch Goals
-> *(What **else** do you think your application could do? **Maximum 3 items**)*
+
+> _(What **else** do you think your application could do? **Maximum 3 items**)_

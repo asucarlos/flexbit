@@ -19,7 +19,7 @@ router.route("/").get(async (req, res, next) => {
 
 // POST /exercise - after MVP
 router.route("/").post(async (req, res, next) => {
-  console.log(req.body);
+  console.log("working 2");
   try {
     const exercise = await createExercise(req.body.data);
     res.status(201).send({
