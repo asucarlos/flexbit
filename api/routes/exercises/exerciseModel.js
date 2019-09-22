@@ -8,14 +8,22 @@ const exerciseSchema = new Schema({
     type: String,
     require: true
   },
+  restTime: {
+    type: Number,
+    require: true
+  },
+  weight: {
+    type: Number,
+    require: true
+  },
+  reps: {
+    type: Number,
+    required: true
+  },
   // after mvp
   creator_id: {
     type: String
     // ??? how can we change this to mongo_id?
-  },
-  muscles: {
-    type: [String]
-    // how can we say an array of strings
   },
   _categoryId: {
     type: Schema.Types.ObjectId,
