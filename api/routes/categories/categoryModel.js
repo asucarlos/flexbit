@@ -12,10 +12,14 @@ const categorySchema = new Schema({
     type: Number,
     require: true
   },
-  measurement: {
-    type: String,
+  weight: {
+    type: Number,
     require: true
+  },
+  reps: {
+    type: Number,
+    required: true
   }
 });
 
-mongoose.model("category", categorySchema, "categories");
+module.exports = mongoose.model("category", categorySchema, "catergories");

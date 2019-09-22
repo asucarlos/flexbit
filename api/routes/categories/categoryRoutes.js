@@ -2,12 +2,10 @@
 
 const express = require("express");
 const router = express();
-
-const {listCategory, createCategory} = require("./categoryService");
-
+const { listCategory, createCategory } = require("./categoryService");
 
 // GET Categories
-router.route('/').get((req, res, next)=> {
+router.route("/").get(async (req, res, next) => {
   try {
     const category = await listCategory();
     res.status(200).send({
@@ -17,7 +15,7 @@ router.route('/').get((req, res, next)=> {
     console.error(`An error has occured: ${e}`);
     next(e);
   }
-})
+});
 
 // Post Categories
 router.route("/").post(async (req, res, next) => {
