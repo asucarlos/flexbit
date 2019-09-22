@@ -2,14 +2,14 @@
 
 const express = require("express");
 const router = express();
-const { listExercises, createExercise } = require("./exerciseService");
+const { listCategory, createCategory } = require("./categoryService");
 
-// GET /exercise
+// GET Categories
 router.route("/").get(async (req, res, next) => {
   try {
-    const exercises = await listExercises();
+    const category = await listCategory();
     res.status(200).send({
-      data: exercises
+      data: category
     });
   } catch (e) {
     console.error(`An error has occured: ${e}`);
@@ -17,18 +17,16 @@ router.route("/").get(async (req, res, next) => {
   }
 });
 
-// POST /exercise - after MVP
+// Post Categories
 router.route("/").post(async (req, res, next) => {
   try {
-    const exercise = await createExercise(req.body.data);
+    const category = await createCategory(req.body.data);
     res.status(201).send({
-      data: exercise
+      data: category
     });
   } catch (e) {
     next(e);
   }
 });
-
-// DELETE /exercise - after MVP
 
 exports.router = router;
