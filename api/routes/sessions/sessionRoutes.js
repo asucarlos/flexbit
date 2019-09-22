@@ -9,7 +9,7 @@ router.route("/").get(async (req, res, next) => {
   try {
     const sessions = await listSessions();
     res.status(200).send({
-      data: session
+      data: sessions
     });
   } catch (e) {
     next(e);

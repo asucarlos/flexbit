@@ -2,10 +2,10 @@
 
 const Session = require('./sessionModel');
 
-exports.listSession = async () => {
+exports.listSessions = async () => {
   try {
     const session = Session.find({});
-    return category;
+    return session;
   } catch (e) {
     throw e;
   }
