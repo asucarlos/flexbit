@@ -2,14 +2,20 @@
 
 const mongoose = require("mongoose");
 const { Schema } = require("mongoose");
+const exerciseRef = require('../exercises/exerciseModel');
 
 const sessionSchema = new Schema({
-  sessionId: {
-    type: Schema.Types.ObjectId,
+  exercises: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: exerciseRef
+  }],
+  start_time: {
+    type: Date,
     required: true
   },
-  Date: {
-    type: Date
+  end_time: {
+    type: Date,
+    required: true
   }
 });
 
