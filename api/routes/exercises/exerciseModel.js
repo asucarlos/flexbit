@@ -2,6 +2,7 @@
 
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
+const categoryRef = require("../categories/categoryModel");
 
 const exerciseSchema = new Schema({
   name: {
@@ -27,6 +28,7 @@ const exerciseSchema = new Schema({
   },
   _categoryId: {
     type: Schema.Types.ObjectId,
+    ref: categoryRef,
     require: true
   }
 });

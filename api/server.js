@@ -11,10 +11,10 @@ const router = express();
 // const { router: bookRoutes } = require("./routes/books/bookRoutes");
 const { router: exerciseRoutes } = require("./routes/exercises/exerciseRoutes");
 const { router: userRoutes } = require("./routes/users/userRoutes");
-const {
-  router: categoryRoutes
-} = require("./routes/categories/categoryRoutes");
+const { router: categoryRoutes } = require("./routes/categories/categoryRoutes");
+const { router: historyRoutes } = require("./routes/history/historyRoutes");
 const { router: sessionRoutes } = require('./routes/sessions/sessionRoutes');
+
 
 // 3. Require conatants
 const { URL, PORT } = require("./utils/constants");
@@ -30,6 +30,7 @@ applyMiddleware(middleWare, router);
 router.use("/api/exercises", exerciseRoutes);
 router.use("/api/users", userRoutes);
 router.use("/api/categories", categoryRoutes);
+router.use("/api/history", historyRoutes);
 router.use('/api/sessions', sessionRoutes);
 
 // 6. Create a server from express instance

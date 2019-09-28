@@ -6,7 +6,8 @@ const { Schema } = require("mongoose");
 const categorySchema = new Schema({
   muscle: {
     type: String,
-    require: true
+    require: true,
+    unique: true
   }
 });
 
