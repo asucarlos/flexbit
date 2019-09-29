@@ -12,6 +12,16 @@ exports.listExercises = async () => {
   }
 };
 
+exports.getExerciseById = async exerciseId => {
+  try {
+    const exercise = await Exercise.findById(exerciseId);
+    return exercise;
+  } catch (e) {
+    console.error('This exercise does not exist');
+    throw e;
+  }
+};
+
 // Create a new exercise that will be added to the database
 exports.createExercise = async exerciseData => {
   // 1. Create a exercise instance
