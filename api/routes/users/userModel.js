@@ -1,8 +1,9 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const bcrypt = require('bcryptjs');
+const bcrypt = require("bcryptjs");
 
 const userSchema = new Schema({
+  name: String,
   email: {
     type: String,
     unique: true,
@@ -11,13 +12,18 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
+  },
+  role: {
+    type: String,
+    enum: ["viewer", "owner"],
+    default: "owner"
   }
-})
+});
 
-userSchema.pre('save', async function(next) {
+userSchema.pre("save", async function(next) {
   const user = this;
 
-  if (user.isModified('password') || user.isNew) {
+  if (user.isModified("password") || user.isNew) {
     try {
       const hash = await bcrypt.hash(user.password, 10);
       user.password = hash;
@@ -28,6 +34,6 @@ userSchema.pre('save', async function(next) {
   } else {
     return next();
   }
-})
+});
 
-exports.model = mongoose.model('User', userSchema);
+exports.model = mongoose.model("User", userSchema);
