@@ -11,14 +11,18 @@ const exerciseSchema = new Schema({
   },
   restTime: {
     type: Number,
+    min: 0,
+    max: 480,
     require: true
   },
   weight: {
     type: Number,
+    min: 0,
     require: true
   },
   reps: {
     type: Number,
+    min: 0,
     required: true
   },
   // after mvp
