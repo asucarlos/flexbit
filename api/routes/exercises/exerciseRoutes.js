@@ -2,7 +2,7 @@
 
 const express = require("express");
 const router = express.Router();
-const { listExercises, createExercise } = require("./exerciseService");
+const { listExercises, createExercise, getExerciseById } = require("./exerciseService");
 
 // GET /exercise
 router.route("/").get(async (req, res, next) => {
@@ -10,6 +10,19 @@ router.route("/").get(async (req, res, next) => {
     const exercises = await listExercises();
     res.status(200).send({
       data: exercises
+    });
+  } catch (e) {
+    console.error(`An error has occured: ${e}`);
+    next(e);
+  }
+});
+
+// GET single exercise 
+router.route("/:id").get(async (req, res, next) => {
+  try {
+    const exercise = await getExerciseById(req.params.id);
+    res.status(200).send({
+      data: exercise
     });
   } catch (e) {
     console.error(`An error has occured: ${e}`);
