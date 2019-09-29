@@ -1,11 +1,12 @@
 "use strict";
 
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { listSessions, createSession } = require('./sessionService');
+const { listSessions, createSession } = require("./sessionService");
+const requireAuth = require("../../middleware/requireAuth");
 
 // GET /session
-router.route("/").get(async (req, res, next) => {
+router.route("/").get(requireAuth, async (req, res, next) => {
   try {
     const sessions = await listSessions();
     res.status(200).send({
@@ -17,7 +18,7 @@ router.route("/").get(async (req, res, next) => {
 });
 
 // Post Sessions
-router.route('/').post(async (req, res, next) => {
+router.route("/").post(requireAuth, async (req, res, next) => {
   try {
     const session = await createSession(req.body.data);
     res.status(201).send({
@@ -26,6 +27,6 @@ router.route('/').post(async (req, res, next) => {
   } catch (e) {
     next(e);
   }
-})
+});
 
 exports.router = router;

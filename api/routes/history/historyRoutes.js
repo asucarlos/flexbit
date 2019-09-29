@@ -3,8 +3,9 @@
 const express = require("express");
 const router = express.Router();
 const { listHistory, createHistory } = require("./historyService");
+const requireAuth = require("../../middleware/requireAuth");
 
-router.route("/").get(async (req, res, next) => {
+router.route("/").get(requireAuth, async (req, res, next) => {
   try {
     const history = await listHistory();
     res.status(200).send({
@@ -16,7 +17,7 @@ router.route("/").get(async (req, res, next) => {
   }
 });
 
-router.route("/").post(async (req, res, next) => {
+router.route("/").post(requireAuth, async (req, res, next) => {
   try {
     const history = await createHistory(req.body.data);
     res.status(201).send({
