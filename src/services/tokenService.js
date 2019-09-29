@@ -1,4 +1,4 @@
-//s et the token
+//set the token
 export const setToken = token => {
   localStorage.setItem("token", token);
 };
