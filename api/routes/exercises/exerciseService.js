@@ -17,6 +17,7 @@ exports.getExerciseById = async exerciseId => {
     const exercise = await Exercise.findById(exerciseId);
     return exercise;
   } catch (e) {
+    console.error('This exercise does not exist');
     throw e;
   }
 };
