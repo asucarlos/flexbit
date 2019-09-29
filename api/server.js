@@ -15,6 +15,7 @@ const {
   router: categoryRoutes
 } = require("./routes/categories/categoryRoutes");
 const { router: historyRoutes } = require("./routes/history/historyRoutes");
+const { router: sessionRoutes } = require('./routes/sessions/sessionRoutes');
 
 // 3. Require conatants
 const { URL, PORT } = require("./utils/constants");
@@ -31,6 +32,7 @@ router.use("/api/exercises", exerciseRoutes);
 router.use("/api/users", userRoutes);
 router.use("/api/categories", categoryRoutes);
 router.use("/api/history", historyRoutes);
+router.use('/api/sessions', sessionRoutes);
 
 // 6. Create a server from express instance
 const server = http.createServer(router);
