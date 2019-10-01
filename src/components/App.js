@@ -38,7 +38,7 @@ class App extends Component {
             <Login hideLogin={this.toggleLogin} setUser={this.setUser} />
           )}
           <Switch>
-            <Route exact path="/" component={Homepage} />
+            <Route exact path="/" component={Homepage} user={this.state.user} />
             <Route exact path="/exerciselist" component={ExerciseList} />
             <Route path="/exerciselist/:exercise" component={Exercise} />
           </Switch>
