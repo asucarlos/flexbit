@@ -53,5 +53,7 @@
       "build/**"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2"
+  }
 }
