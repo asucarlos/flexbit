@@ -38,7 +38,7 @@ class Login extends Component {
   };
 
   render() {
-    // const { type } = this.state;
+    const { type } = this.state;
 
     return (
       <div>
