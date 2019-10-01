@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import giphy from "../../assets/giphy.gif";
 import { Image } from "./styles";
-import Session from "../Session/Session";
+import ExerciseForm from "../ExerciseForm/ExerciseForm";
 
 class Homepage extends Component {
   constructor() {
@@ -28,7 +28,7 @@ class Homepage extends Component {
   render(props) {
     return (
       <div className="container">
-        {this.state.user ? <Session /> : this.welcomeSection}
+        {this.state.user ? <ExerciseForm /> : this.welcomeSection}
       </div>
     );
   }
