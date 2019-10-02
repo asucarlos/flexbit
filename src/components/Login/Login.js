@@ -5,7 +5,7 @@ import { setToken } from "../../services/tokenService";
 
 class Login extends Component {
   state = {
-    type: "Login",
+    type: "login",
     message: null
   };
 
@@ -15,7 +15,7 @@ class Login extends Component {
     e.preventDefault();
 
     const { email, password, type } = this.state;
-    const route = type === "Login" ? "Login" : "Sign up";
+    const route = type === "login" ? "login" : "signup";
 
     try {
       const res = await axios.post(`/api/users/${route}`, {
@@ -44,10 +44,10 @@ class Login extends Component {
     return (
       <Wrapper className="container notification">
         <Container>
-          <button className="button is-primary" active={type === 'Login'} onClick={() => this.changeForm('Login')}>
+          <button className="button is-primary" active={type === 'login'} onClick={() => this.changeForm('Login')}>
             Login
           </button>
-          <button className="button is-primary" active={type === 'Sign up'} onClick={() => this.changeForm('Sign up')}>
+          <button className="button is-primary" active={type === 'signup'} onClick={() => this.changeForm('Sign up')}>
             Sign up
           </button>
           <form onSubmit={this.handleSubmit}>
