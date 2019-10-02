@@ -4,7 +4,7 @@ import { setToken } from "../../services/tokenService";
 
 class Login extends Component {
   state = {
-    type: "login",
+    type: "signup",
     message: null
   };
 
@@ -45,24 +45,24 @@ class Login extends Component {
         <div>
           <div className="field is-grouped">
             <div className="control">
-              <button className="button is-primary" active={type === 'login'} onClick={() => this.changeForm('Login')}>
+              <button className="button is-primary" active={type} onClick={() => this.changeForm('login')}>
                 Login
               </button>
             </div>
             <div className="control">
-              <button className="button is-primary" active={type === 'signup'} onClick={() => this.changeForm('Sign up')}>
+              <button className="button is-primary" active={type} onClick={() => this.changeForm('signup')}>
                 Sign up
               </button>
             </div>
           </div>
-          <div className="field" onSubmit={this.handleSubmit}>
+          <form className="field" onSubmit={this.handleSubmit}>
             <p className="control">
               You'll need to login to continue
             </p>
             <div className="field">
               <label className="label">Email</label>
               <div className="control has-icons-left">
-                <input className="input" spaced name="email" type="email" placeholder="example@email.com" onChange={this.handleChange} />
+                <input className="input" name="email" type="email" placeholder="example@email.com" onChange={this.handleChange} />
                 <span className="icon is-small is-left">
                   <i className="fas fa-envelope"></i>
                 </span>
@@ -71,7 +71,7 @@ class Login extends Component {
             <div className="field">
               <label className="label">Password</label>
               <div className="control">
-                <input className="input" spaced name="password" type="password" placeholder="Password" onChange={this.handleChange} />
+                <input className="input" name="password" type="password" placeholder="Password" onChange={this.handleChange} />
               </div>
             </div>
             <div className="field is-grouped">
@@ -82,7 +82,7 @@ class Login extends Component {
                 <button className="button is-primary" onClick={this.props.hideLogin}>Cancel</button>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     );
