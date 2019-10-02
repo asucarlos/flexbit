@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Wrapper, Container } from "./styles";
 import { setToken } from "../../services/tokenService";
 
 class Login extends Component {
   state = {
-    type: "Login",
+    type: "signup",
     message: null
   };
 
@@ -15,7 +14,7 @@ class Login extends Component {
     e.preventDefault();
 
     const { email, password, type } = this.state;
-    const route = type === "Login" ? "Login" : "Sign up";
+    const route = type === "login" ? "login" : "signup";
 
     try {
       const res = await axios.post(`/api/users/${route}`, {
@@ -42,27 +41,50 @@ class Login extends Component {
     const { type } = this.state;
 
     return (
-      <Wrapper className="container notification">
-        <Container>
-          <button className="button is-primary" active={type === 'Login'} onClick={() => this.changeForm('Login')}>
-            Login
-          </button>
-          <button className="button is-primary" active={type === 'Sign up'} onClick={() => this.changeForm('Sign up')}>
-            Sign up
-          </button>
-          <form onSubmit={this.handleSubmit}>
-            <p>
+      <div className="container notification">
+        <div>
+          <div className="field is-grouped">
+            <div className="control">
+              <button className="button is-primary" active={type} onClick={() => this.changeForm('login')}>
+                Login
+              </button>
+            </div>
+            <div className="control">
+              <button className="button is-primary" active={type} onClick={() => this.changeForm('signup')}>
+                Sign up
+              </button>
+            </div>
+          </div>
+          <form className="field" onSubmit={this.handleSubmit}>
+            <p className="control">
               You'll need to login to continue
             </p>
-            <input spaced name="email" type="email" placeholder="YourEmail@email.com" onChange={this.handleChange} />
-            <input spaced name="password" type="password" placeholder="password" onChange={this.handleChange} />
-            <div>
-              <button className="button is-primary" type="submit">{type}</button>
-              <button className="button is-primary" onClick={this.props.hideLogin}>Cancel</button>
+            <div className="field">
+              <label className="label">Email</label>
+              <div className="control has-icons-left">
+                <input className="input" name="email" type="email" placeholder="example@email.com" onChange={this.handleChange} />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-envelope"></i>
+                </span>
+              </div>
+            </div>
+            <div className="field">
+              <label className="label">Password</label>
+              <div className="control">
+                <input className="input" name="password" type="password" placeholder="Password" onChange={this.handleChange} />
+              </div>
+            </div>
+            <div className="field is-grouped">
+              <div className="control">
+                <button className="button is-primary" type="submit">{type}</button>
+              </div>
+              <div className="control">
+                <button className="button is-primary" onClick={this.props.hideLogin}>Cancel</button>
+              </div>
             </div>
           </form>
-        </Container>
-      </Wrapper>
+        </div>
+      </div>
     );
   }
 }
