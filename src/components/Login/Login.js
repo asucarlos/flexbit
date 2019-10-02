@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Wrapper, Container } from "./styles";
 import { setToken } from "../../services/tokenService";
 
 class Login extends Component {
@@ -41,25 +42,27 @@ class Login extends Component {
     const { type } = this.state;
 
     return (
-      <div>
-        <button active={type === 'Login'} onClick={() => this.changeForm('Login')}>
-          Login
-        </button>
-        <button active={type === 'Sign up'} onClick={() => this.changeForm('Sign up')}>
-          Sign up
-        </button>
-        <form onSubmit={this.handleSubmit}>
-          <h3>
-            You'll need to login to continue
-          </h3>
-          <input spaced name="email" type="email" placeholder="email" onChange={this.handleChange} />
-          <input spaced name="password" type="password" placeholder="password" onChange={this.handleChange} />
-          <div>
-            <button type="submit">{type}</button>
-            <button small onClick={this.props.hideLogin}>Cancel</button>
-          </div>
-        </form>
-      </div>
+      <Wrapper className="container notification">
+        <Container>
+          <button className="button is-primary" active={type === 'Login'} onClick={() => this.changeForm('Login')}>
+            Login
+          </button>
+          <button className="button is-primary" active={type === 'Sign up'} onClick={() => this.changeForm('Sign up')}>
+            Sign up
+          </button>
+          <form onSubmit={this.handleSubmit}>
+            <p>
+              You'll need to login to continue
+            </p>
+            <input spaced name="email" type="email" placeholder="YourEmail@email.com" onChange={this.handleChange} />
+            <input spaced name="password" type="password" placeholder="password" onChange={this.handleChange} />
+            <div>
+              <button className="button is-primary" type="submit">{type}</button>
+              <button className="button is-primary" onClick={this.props.hideLogin}>Cancel</button>
+            </div>
+          </form>
+        </Container>
+      </Wrapper>
     );
   }
 }
