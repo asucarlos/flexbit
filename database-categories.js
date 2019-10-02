@@ -1,11 +1,10 @@
-'use strict';
+"use strict";
 
-const { MongoClient } = require('mongodb');
-const url = 'mongodb://localhost:27017';
-const dbname = 'flexbit';
+const { MongoClient } = require("mongodb");
+const url = "mongodb://localhost:27017";
+const dbname = "flexbit";
 
-const faker = require ('faker');
-
+const faker = require("faker");
 
 MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
   if (err) {
@@ -14,30 +13,30 @@ MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
   }
 
   const db = client.db(dbname);
-  const collection = db.collection('fakeCategories');
+  const collection = db.collection("categories");
 
   collection.insert(
     [
       {
-        "muscle": "Shoulders"
+        muscle: "Shoulders"
       },
       {
-        "muscle": "Triceps"
+        muscle: "Triceps"
       },
       {
-        "muscle": "Biceps"
+        muscle: "Biceps"
       },
       {
-        "muscle": "Chest"
+        muscle: "Chest"
       },
       {
-        "muscle": "Back"
+        muscle: "Back"
       },
       {
-        "muscle": "Legs"
+        muscle: "Legs"
       },
       {
-        "muscle": "Abs"
+        muscle: "Abs"
       }
     ],
     (err, result) => {
@@ -45,10 +44,9 @@ MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
         if (err) {
           throw err;
         }
-        console.log('items', items);
+        console.log("items", items);
         client.close();
       });
     }
-  )
-
-})
+  );
+});

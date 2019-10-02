@@ -7,13 +7,17 @@ import ExerciseList from "./ExerciseList";
 import Exercise from "./Exercise";
 import Homepage from "./Home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import axios from "axios";
 
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       loginActive: false
     };
+
+    this.fetchExerciseList();
   }
 
   handleChange = e => {
@@ -24,6 +28,17 @@ class App extends Component {
 
   toggleLogin = () =>
     this.setState(prevState => ({ showLogin: !prevState.showLogin }));
+
+  async fetchExerciseList() {
+    try {
+      const res = await axios.get("/api/exercises");
+      this.setState({
+        exerciseList: res.data.data
+      });
+    } catch (e) {
+      console.error("an error was encountered", e);
+    }
+  }
 
   render() {
     return (
@@ -39,7 +54,13 @@ class App extends Component {
           )}
           <Switch>
             <Route exact path="/" component={Homepage} user={this.state.user} />
-            <Route exact path="/exerciselist" component={ExerciseList} />
+            <Route
+              exact
+              path="/exerciselist"
+              render={props => (
+                <ExerciseList exerciseList={this.state.exerciseList} />
+              )}
+            />
             <Route path="/exerciselist/:exercise" component={Exercise} />
           </Switch>
         </>
