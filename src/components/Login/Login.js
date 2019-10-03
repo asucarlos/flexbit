@@ -39,21 +39,13 @@ class Login extends Component {
 
   render() {
     const { type } = this.state;
-    const { user } = this.props;
 
     return (
-      <div className="container notification">
-        <div>
-          <div className="field is-grouped">
-            <div className="control">
-              {user ? (
-                <button
-                  className="button is-primary"
-                  onClick={this.props.removeUser}
-                >
-                  Logout
-                </button>
-              ) : (
+      <div className="modal is-active level">
+        <div className="modal-background level-item">
+          <div className="modal-content notification">
+            <div className="field is-grouped">
+              <div className="control">
                 <button
                   className="button is-primary"
                   active={type}
@@ -61,66 +53,66 @@ class Login extends Component {
                 >
                   Login
                 </button>
-              )}
-            </div>
-            <div className="control">
-              <button
-                className="button is-primary"
-                active={type}
-                onClick={() => this.changeForm("signup")}
-              >
-                Sign up
-              </button>
-            </div>
-          </div>
-          <form className="field" onSubmit={this.handleSubmit}>
-            <p className="control">You'll need to login to continue</p>
-            <div className="field">
-              <label className="label">Email</label>
-              <div className="control has-icons-left">
-                <input
-                  className="input"
-                  name="email"
-                  type="email"
-                  placeholder="example@email.com"
-                  onChange={this.handleChange}
-                />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-envelope"></i>
-                </span>
-              </div>
-            </div>
-            <div className="field">
-              <label className="label">Password</label>
-              <div className="control has-icons-left">
-                <input
-                  className="input"
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                  onChange={this.handleChange}
-                />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-lock"></i>
-                </span>
-              </div>
-            </div>
-            <div className="field is-grouped">
-              <div className="control">
-                <button className="button is-primary" type="submit">
-                  {type}
-                </button>
               </div>
               <div className="control">
                 <button
                   className="button is-primary"
-                  onClick={this.props.hideLogin}
+                  active={type}
+                  onClick={() => this.changeForm("signup")}
                 >
-                  Cancel
+                  Sign up
                 </button>
               </div>
             </div>
-          </form>
+            <form className="field" onSubmit={this.handleSubmit}>
+              <p className="control">You'll need to login to continue</p>
+              <div className="field">
+                <label className="label">Email</label>
+                <div className="control has-icons-left">
+                  <input
+                    className="input"
+                    name="email"
+                    type="email"
+                    placeholder="example@email.com"
+                    onChange={this.handleChange}
+                  />
+                  <span className="icon is-small is-left">
+                    <i className="fas fa-envelope"></i>
+                  </span>
+                </div>
+              </div>
+              <div className="field">
+                <label className="label">Password</label>
+                <div className="control has-icons-left">
+                  <input
+                    className="input"
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    onChange={this.handleChange}
+                  />
+                  <span className="icon is-small is-left">
+                    <i className="fas fa-lock"></i>
+                  </span>
+                </div>
+              </div>
+              <div className="field is-grouped">
+                <div className="control">
+                  <button className="button is-primary" type="submit">
+                    {type}
+                  </button>
+                </div>
+                <div className="control">
+                  <button
+                    className="button is-primary"
+                    onClick={this.props.hideLogin}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     );
