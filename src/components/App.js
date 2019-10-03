@@ -14,7 +14,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      loginActive: false
+      loginActive: false,
+      user: false
     };
 
     this.fetchExerciseList();
@@ -40,6 +41,13 @@ class App extends Component {
     }
   }
 
+  setUser = token => this.setState({ user: token });
+
+  logout = () => {
+    console.log("hi");
+    this.setState({ user: false });
+  };
+
   render() {
     return (
       <Router>
@@ -50,7 +58,11 @@ class App extends Component {
             logout={this.logout}
           />
           {this.state.showLogin && !this.state.user && (
-            <Login hideLogin={this.toggleLogin} setUser={this.setUser} />
+            <Login
+              hideLogin={this.toggleLogin}
+              setUser={this.setUser}
+              user={this.state.user}
+            />
           )}
           <Switch>
             <Route exact path="/" component={Homepage} user={this.state.user} />
