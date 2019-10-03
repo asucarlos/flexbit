@@ -40,7 +40,6 @@ class Login extends Component {
   render() {
     const { type } = this.state;
     const { user } = this.props;
-    console.log(this.props.removeUser);
 
     return (
       <div className="container notification">

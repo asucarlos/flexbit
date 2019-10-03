@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-// import logo from './logo.svg';
-// import "./App.scss";
 import Nav from "./Nav";
 import Login from "./Login";
 import ExerciseList from "./ExerciseList";
-import Exercise from "./Exercise";
 import Homepage from "./Home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from "axios";
@@ -41,12 +38,12 @@ class App extends Component {
     }
   }
 
-  setUser = token => this.setState({ user: token });
+  setUser = token =>
+    this.setState({ user: token }, () => {
+      console.log(this.state);
+    });
 
-  logout = () => {
-    console.log("hi");
-    this.setState({ user: false });
-  };
+  logout = () => this.setState({ user: false });
 
   render() {
     return (
@@ -65,7 +62,11 @@ class App extends Component {
             />
           )}
           <Switch>
-            <Route exact path="/" component={Homepage} user={this.state.user} />
+            <Route
+              exact
+              path="/"
+              render={props => <Homepage user={this.state.user} />}
+            />
             <Route
               exact
               path="/exerciselist"
@@ -73,7 +74,6 @@ class App extends Component {
                 <ExerciseList exerciseList={this.state.exerciseList} />
               )}
             />
-            <Route path="/exerciselist/:exercise" component={Exercise} />
           </Switch>
         </>
       </Router>
