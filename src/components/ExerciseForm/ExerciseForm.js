@@ -9,6 +9,7 @@ class ExerciseForm extends Component {
   };
 
   render() {
+    const exerciseList = this.props.exerciseList;
     return (
       <form className="notification" onSubmit={this.handleSubmit}>
         <div className="field">
@@ -16,9 +17,11 @@ class ExerciseForm extends Component {
           <p className="control has-icons-left">
             <span className="select">
               <select>
-                <option defaultValue>Bench Press</option>
-                <option>Push up</option>
-                <option>Leg Press</option>
+                {exerciseList
+                  ? exerciseList.map((exercise, i) => (
+                      <option key={i}>{exercise.name}</option>
+                    ))
+                  : null}
               </select>
             </span>
             <span className="icon is-small is-left">
