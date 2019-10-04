@@ -1,22 +1,40 @@
 import React, { Component } from "react";
 // import axios from "axios";
+// import Exercise from "../Exercise";
 
 class ExerciseForm extends Component {
-  handleChange = e => this.setState({ [e.target.name]: e.target.value });
+  // handleStart = async e => {
+  //   e.preventDefault();
+  //   const { exerciseSelected, reps, weight } = this.state;
+  //   console.log(exerciseSelected, reps, weight);
+  //   try {
+  //     // post the session to the db
+  //     const res = await axios.post(`/api/sessions/`, {
+  //       data: {
+  //         exercises: []
+  //       }
+  //     });
 
-  handleSubmit = () => {
-    // add a new component that reflects the exercise selected
-  };
+  //     // we might not need to do that?
+
+  //     // do a get request to get the exercises used this this session
+  //     // also send the token with the request
+  //     // set state with this session
+  //     // render the session
+  //   } catch (e) {
+  //     this.setState({ message: e });
+  //   }
+  // };
 
   render() {
-    const exerciseList = this.props.exerciseList;
+    const { exerciseList, handleChange, handleSubmit } = this.props;
     return (
-      <form className="notification" onSubmit={this.handleSubmit}>
+      <form id="exercise-form" className="notification" onSubmit={handleSubmit}>
         <div className="field">
           <label className="label">Exercise</label>
           <p className="control has-icons-left">
             <span className="select">
-              <select>
+              <select name="exerciseSelected" onChange={handleChange}>
                 {exerciseList
                   ? exerciseList.map((exercise, i) => (
                       <option key={i}>{exercise.name}</option>
@@ -34,10 +52,11 @@ class ExerciseForm extends Component {
           <div className="control has-icons-left">
             <input
               className="input"
+              name="reps"
               type="number"
               placeholder="3"
               min="0"
-              max="50"
+              onChange={handleChange}
             />
             <span className="icon is-left">
               <i className="fas fa-redo-alt"></i>
@@ -49,10 +68,11 @@ class ExerciseForm extends Component {
           <div className="control has-icons-left">
             <input
               className="input"
+              name="weight"
               type="number"
               placeholder="20"
               min="0"
-              max="500"
+              onChange={handleChange}
             />
             <span className="icon is-left">
               <i className="fas fa-weight-hanging"></i>
@@ -60,7 +80,7 @@ class ExerciseForm extends Component {
           </div>
         </div>
         <p className="control">
-          <button className="button is-primary" onSubmit={this.handleSubmit}>
+          <button className="button is-primary" onSubmit={handleSubmit}>
             Submit
           </button>
         </p>
