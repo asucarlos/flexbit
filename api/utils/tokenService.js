@@ -17,3 +17,8 @@ exports.issueToken = async userData => {
 exports.verifyToken = async token => {
   return jwt.verify(token, SECRET);
 };
+
+// create method to decode
+exports.decodeToken = async token => {
+  return jwt.decode(token, SECRET);
+};

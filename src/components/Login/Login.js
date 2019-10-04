@@ -4,8 +4,9 @@ import { setToken } from "../../services/tokenService";
 
 class Login extends Component {
   state = {
-    type: "signup",
-    message: null
+    type: "login",
+    message: null,
+    user: this.props.user
   };
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -23,13 +24,12 @@ class Login extends Component {
           password: password
         }
       });
-      console.log(res);
       const token = res.data.data.token;
       setToken(token);
+      this.props.setUser(res.data.data.token);
       this.props.hideLogin();
     } catch (e) {
       this.setState({ message: e });
-      console.log(e);
     }
   };
 
@@ -46,24 +46,36 @@ class Login extends Component {
           <div className="modal-content notification">
             <div className="field is-grouped">
               <div className="control">
-                <button className="button is-primary" active={type} onClick={() => this.changeForm('login')}>
+                <button
+                  className="button is-primary"
+                  active={type}
+                  onClick={() => this.changeForm("login")}
+                >
                   Login
                 </button>
               </div>
               <div className="control">
-                <button className="button is-primary" active={type} onClick={() => this.changeForm('signup')}>
+                <button
+                  className="button is-primary"
+                  active={type}
+                  onClick={() => this.changeForm("signup")}
+                >
                   Sign up
                 </button>
               </div>
             </div>
             <form className="field" onSubmit={this.handleSubmit}>
-              <p className="control">
-                You'll need to login to continue
-              </p>
+              <p className="control">You'll need to login to continue</p>
               <div className="field">
                 <label className="label">Email</label>
                 <div className="control has-icons-left">
-                  <input className="input" name="email" type="email" placeholder="example@email.com" onChange={this.handleChange} />
+                  <input
+                    className="input"
+                    name="email"
+                    type="email"
+                    placeholder="example@email.com"
+                    onChange={this.handleChange}
+                  />
                   <span className="icon is-small is-left">
                     <i className="fas fa-envelope"></i>
                   </span>
@@ -71,16 +83,32 @@ class Login extends Component {
               </div>
               <div className="field">
                 <label className="label">Password</label>
-                <div className="control">
-                  <input className="input" name="password" type="password" placeholder="Password" onChange={this.handleChange} />
+                <div className="control has-icons-left">
+                  <input
+                    className="input"
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    onChange={this.handleChange}
+                  />
+                  <span className="icon is-small is-left">
+                    <i className="fas fa-lock"></i>
+                  </span>
                 </div>
               </div>
-              <div className="field is-grouped is-pulled-right">
+              <div className="field is-grouped">
                 <div className="control">
-                  <button className="button is-primary" type="submit">{type}</button>
+                  <button className="button is-primary" type="submit">
+                    {type}
+                  </button>
                 </div>
                 <div className="control">
-                  <button className="button is-primary" onClick={this.props.hideLogin}>Cancel</button>
+                  <button
+                    className="button is-primary"
+                    onClick={this.props.hideLogin}
+                  >
+                    Cancel
+                  </button>
                 </div>
               </div>
             </form>
