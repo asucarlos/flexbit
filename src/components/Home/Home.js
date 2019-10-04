@@ -6,7 +6,11 @@ class Homepage extends Component {
   render() {
     return (
       <div className="container">
-        {this.props.user ? <ExerciseForm /> : <WelcomeSection />}
+        {this.props.user ? (
+          <ExerciseForm exerciseList={this.props.exerciseList} />
+        ) : (
+          <WelcomeSection />
+        )}
       </div>
     );
   }

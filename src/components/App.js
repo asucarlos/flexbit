@@ -11,8 +11,10 @@ class App extends Component {
     super(props);
 
     this.state = {
-      loginActive: false,
-      user: false
+      // loginActive: false,
+      // user: false
+      loginActive: true,
+      user: true
     };
 
     this.fetchExerciseList();
@@ -65,7 +67,12 @@ class App extends Component {
             <Route
               exact
               path="/"
-              render={props => <Homepage user={this.state.user} />}
+              render={props => (
+                <Homepage
+                  user={this.state.user}
+                  exerciseList={this.state.exerciseList}
+                />
+              )}
             />
             <Route
               exact
