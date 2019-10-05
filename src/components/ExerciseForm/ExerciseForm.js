@@ -74,7 +74,7 @@ class ExerciseForm extends Component {
               className="input"
               name="sets"
               type="number"
-              placeholder="3"
+              placeholder="8"
               min="0"
               onChange={handleChange}
             />
