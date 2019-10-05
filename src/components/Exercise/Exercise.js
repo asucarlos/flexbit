@@ -1,7 +1,7 @@
 import React from "react";
 
 const Exercise = ({ exercise }) => {
-  const { name, weight, sets, restTime, id } = exercise;
+  const { name, weight, reps, sets, restTime, notes, id } = exercise;
   const parsedRestTime = time => {
     const minutes = Math.floor(time / 60);
     const seconds = time - minutes * 60;
@@ -17,21 +17,16 @@ const Exercise = ({ exercise }) => {
           </span>
         </div>
       </header>
-      <div className="card-content message is-primary">
-        <div className="message-body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
-          <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta
-          nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida
-          purus diam, et dictum efficitur. Aenean ac <em>eleifend lacus</em>, in
-          mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor
-          urna tempor ligula, id porttitor mi magna a neque. Donec dui urna,
-          vehicula et sem eget, facilisis sodales sem.
+      {notes ? (
+        <div className="card-content message is-primary">
+          <div className="message-body">{notes}</div>
+          <br />
         </div>
-        <br />
-      </div>
+      ) : null}
       <footer className="card-footer">
-        <p className="card-footer-item">Sets: {sets} Pounds</p>
-        <p className="card-footer-item">Weight: {weight}</p>
+        <p className="card-footer-item">Reps: {reps}</p>
+        <p className="card-footer-item">Sets: {sets}</p>
+        <p className="card-footer-item">Weight: {weight} Pounds</p>
         <p className="card-footer-item">
           Rest Time: {parsedRestTime(restTime)}
         </p>
