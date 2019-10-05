@@ -54,7 +54,7 @@ class ExerciseForm extends Component {
           <div className="control has-icons-left">
             <input
               className="input"
-              name="sets"
+              name="reps"
               type="number"
               placeholder="8"
               min="0"

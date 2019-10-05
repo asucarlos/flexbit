@@ -6,7 +6,7 @@ import Session from "../Session/";
 class Homepage extends Component {
   state = {
     exerciseSelected: "",
-    sets: 0,
+    reps: 0,
     weight: 0,
     restTime: 0,
     session: []
@@ -25,7 +25,7 @@ class Homepage extends Component {
     e.preventDefault();
     const exerciseObj = {
       name: this.state.exerciseSelected,
-      sets: this.state.sets,
+      reps: this.state.reps,
       weight: this.state.weight,
       restTime: this.state.restTime
     };
@@ -36,7 +36,7 @@ class Homepage extends Component {
     this.setState({
       session: newSession,
       exerciseSelected: this.props.exerciseList[0]["name"],
-      sets: 0,
+      reps: 0,
       weight: 0
     });
 
