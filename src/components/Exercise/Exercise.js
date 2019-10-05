@@ -13,7 +13,7 @@ const Exercise = ({ exercise }) => {
         <p className="card-header-title">{name}</p>
         <div href="#" className="card-header-icon" aria-label="more options">
           <span className="icon card-header-icon">
-            <i className="fas fa-angle-down" aria-hidden="true"></i>
+            <i className="fas fa-times" aria-hidden="true"></i>
           </span>
         </div>
       </header>
@@ -30,8 +30,8 @@ const Exercise = ({ exercise }) => {
         <br />
       </div>
       <footer className="card-footer">
-        <p className="card-footer-item">Sets: {sets} Pounds</p>
-        <p className="card-footer-item">Weight: {weight}</p>
+        <p className="card-footer-item">Sets: {sets}</p>
+        <p className="card-footer-item">Weight: {weight} lb</p>
         <p className="card-footer-item">
           Rest Time: {parsedRestTime(restTime)}
         </p>
