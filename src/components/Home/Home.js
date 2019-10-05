@@ -7,6 +7,7 @@ class Homepage extends Component {
   state = {
     exerciseSelected: "",
     reps: 0,
+    sets: 0,
     weight: 0,
     restTime: 0,
     session: []
@@ -26,6 +27,7 @@ class Homepage extends Component {
     const exerciseObj = {
       name: this.state.exerciseSelected,
       reps: this.state.reps,
+      sets: this.state.sets,
       weight: this.state.weight,
       restTime: this.state.restTime
     };
@@ -37,6 +39,7 @@ class Homepage extends Component {
       session: newSession,
       exerciseSelected: this.props.exerciseList[0]["name"],
       reps: 0,
+      sets: 0,
       weight: 0
     });
 

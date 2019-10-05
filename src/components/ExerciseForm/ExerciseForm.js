@@ -56,6 +56,24 @@ class ExerciseForm extends Component {
               className="input"
               name="reps"
               type="number"
+              placeholder="3"
+              min="0"
+              onChange={handleChange}
+            />
+            <span className="icon is-left">
+              <i className="fas fa-redo-alt"></i>
+            </span>
+          </div>
+        </div>
+        <div className="field">
+          <label name="sets" className="label">
+            Sets
+          </label>
+          <div className="control has-icons-left">
+            <input
+              className="input"
+              name="sets"
+              type="number"
               placeholder="8"
               min="0"
               onChange={handleChange}

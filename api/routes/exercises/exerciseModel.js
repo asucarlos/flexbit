@@ -25,6 +25,14 @@ const exerciseSchema = new Schema({
     min: 0,
     required: true
   },
+  sets: {
+    type: Number,
+    min: 0,
+    required: true
+  },
+  notes: {
+    type: String
+  },
   // after mvp
   creator_id: {
     type: String

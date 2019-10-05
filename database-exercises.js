@@ -31,6 +31,12 @@ MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
           min: 0,
           max: 100
         }),
+        sets: faker.random.number({
+          type: Number,
+          min: 0,
+          max: 10
+        }),
+        notes: faker.lorem.sentences(),
         creator_id: null,
         _categoryId: "5d879899becc660f5f514f4b"
       },
@@ -48,108 +54,12 @@ MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
           min: 0,
           max: 100
         }),
-        creator_id: null,
-        _categoryId: "5d879899becc660f5f514f4c"
-      },
-      {
-        name: faker.random.word(),
-        restTime: faker.random.number({
-          min: 30,
-          max: 240
-        }),
-        weight: faker.random.number({
+        sets: faker.random.number({
+          type: Number,
           min: 0,
-          max: 1000
+          max: 10
         }),
-        reps: faker.random.number({
-          min: 0,
-          max: 100
-        }),
-        creator_id: null,
-        _categoryId: "5d879899becc660f5f514f4d"
-      },
-      {
-        name: faker.random.word(),
-        restTime: faker.random.number({
-          min: 30,
-          max: 240
-        }),
-        weight: faker.random.number({
-          min: 0,
-          max: 1000
-        }),
-        reps: faker.random.number({
-          min: 0,
-          max: 100
-        }),
-        creator_id: null,
-        _categoryId: "5d879899becc660f5f514f4e"
-      },
-      {
-        name: faker.random.word(),
-        restTime: faker.random.number({
-          min: 30,
-          max: 240
-        }),
-        weight: faker.random.number({
-          min: 0,
-          max: 1000
-        }),
-        reps: faker.random.number({
-          min: 0,
-          max: 100
-        }),
-        creator_id: null,
-        _categoryId: "5d879899becc660f5f514f4f"
-      },
-      {
-        name: faker.random.word(),
-        restTime: faker.random.number({
-          min: 30,
-          max: 240
-        }),
-        weight: faker.random.number({
-          min: 0,
-          max: 1000
-        }),
-        reps: faker.random.number({
-          min: 0,
-          max: 100
-        }),
-        creator_id: null,
-        _categoryId: "5d879899becc660f5f514f50"
-      },
-      {
-        name: faker.random.word(),
-        restTime: faker.random.number({
-          min: 30,
-          max: 240
-        }),
-        weight: faker.random.number({
-          min: 0,
-          max: 1000
-        }),
-        reps: faker.random.number({
-          min: 0,
-          max: 100
-        }),
-        creator_id: null,
-        _categoryId: "5d879899becc660f5f514f4a"
-      },
-      {
-        name: faker.random.word(),
-        restTime: faker.random.number({
-          min: 30,
-          max: 240
-        }),
-        weight: faker.random.number({
-          min: 0,
-          max: 1000
-        }),
-        reps: faker.random.number({
-          min: 0,
-          max: 100
-        }),
+        notes: faker.lorem.sentences(),
         creator_id: null,
         _categoryId: "5d879899becc660f5f514f4b"
       },
@@ -167,8 +77,14 @@ MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
           min: 0,
           max: 100
         }),
+        sets: faker.random.number({
+          type: Number,
+          min: 0,
+          max: 10
+        }),
+        notes: faker.lorem.sentences(),
         creator_id: null,
-        _categoryId: "5d879899becc660f5f514f4c"
+        _categoryId: "5d879899becc660f5f514f4b"
       },
       {
         name: faker.random.word(),
@@ -184,8 +100,267 @@ MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
           min: 0,
           max: 100
         }),
+        sets: faker.random.number({
+          type: Number,
+          min: 0,
+          max: 10
+        }),
+        notes: faker.lorem.sentences(),
         creator_id: null,
-        _categoryId: "5d879899becc660f5f514f4d"
+        _categoryId: "5d879899becc660f5f514f4b"
+      },
+      {
+        name: faker.random.word(),
+        restTime: faker.random.number({
+          min: 30,
+          max: 240
+        }),
+        weight: faker.random.number({
+          min: 0,
+          max: 1000
+        }),
+        reps: faker.random.number({
+          min: 0,
+          max: 100
+        }),
+        sets: faker.random.number({
+          type: Number,
+          min: 0,
+          max: 10
+        }),
+        notes: faker.lorem.sentences(),
+        creator_id: null,
+        _categoryId: "5d879899becc660f5f514f4b"
+      },
+      {
+        name: faker.random.word(),
+        restTime: faker.random.number({
+          min: 30,
+          max: 240
+        }),
+        weight: faker.random.number({
+          min: 0,
+          max: 1000
+        }),
+        reps: faker.random.number({
+          min: 0,
+          max: 100
+        }),
+        sets: faker.random.number({
+          type: Number,
+          min: 0,
+          max: 10
+        }),
+        notes: faker.lorem.sentences(),
+        creator_id: null,
+        _categoryId: "5d879899becc660f5f514f4b"
+      },
+      {
+        name: faker.random.word(),
+        restTime: faker.random.number({
+          min: 30,
+          max: 240
+        }),
+        weight: faker.random.number({
+          min: 0,
+          max: 1000
+        }),
+        reps: faker.random.number({
+          min: 0,
+          max: 100
+        }),
+        sets: faker.random.number({
+          type: Number,
+          min: 0,
+          max: 10
+        }),
+        notes: faker.lorem.sentences(),
+        creator_id: null,
+        _categoryId: "5d879899becc660f5f514f4b"
+      },
+      {
+        name: faker.random.word(),
+        restTime: faker.random.number({
+          min: 30,
+          max: 240
+        }),
+        weight: faker.random.number({
+          min: 0,
+          max: 1000
+        }),
+        reps: faker.random.number({
+          min: 0,
+          max: 100
+        }),
+        sets: faker.random.number({
+          type: Number,
+          min: 0,
+          max: 10
+        }),
+        notes: faker.lorem.sentences(),
+        creator_id: null,
+        _categoryId: "5d879899becc660f5f514f4b"
+      },
+      {
+        name: faker.random.word(),
+        restTime: faker.random.number({
+          min: 30,
+          max: 240
+        }),
+        weight: faker.random.number({
+          min: 0,
+          max: 1000
+        }),
+        reps: faker.random.number({
+          min: 0,
+          max: 100
+        }),
+        sets: faker.random.number({
+          type: Number,
+          min: 0,
+          max: 10
+        }),
+        notes: faker.lorem.sentences(),
+        creator_id: null,
+        _categoryId: "5d879899becc660f5f514f4b"
+      },
+      {
+        name: faker.random.word(),
+        restTime: faker.random.number({
+          min: 30,
+          max: 240
+        }),
+        weight: faker.random.number({
+          min: 0,
+          max: 1000
+        }),
+        reps: faker.random.number({
+          min: 0,
+          max: 100
+        }),
+        sets: faker.random.number({
+          type: Number,
+          min: 0,
+          max: 10
+        }),
+        notes: faker.lorem.sentences(),
+        creator_id: null,
+        _categoryId: "5d879899becc660f5f514f4b"
+      },
+      {
+        name: faker.random.word(),
+        restTime: faker.random.number({
+          min: 30,
+          max: 240
+        }),
+        weight: faker.random.number({
+          min: 0,
+          max: 1000
+        }),
+        reps: faker.random.number({
+          min: 0,
+          max: 100
+        }),
+        sets: faker.random.number({
+          type: Number,
+          min: 0,
+          max: 10
+        }),
+        notes: faker.lorem.sentences(),
+        creator_id: null,
+        _categoryId: "5d879899becc660f5f514f4b"
+      },
+      {
+        name: faker.random.word(),
+        restTime: faker.random.number({
+          min: 30,
+          max: 240
+        }),
+        weight: faker.random.number({
+          min: 0,
+          max: 1000
+        }),
+        reps: faker.random.number({
+          min: 0,
+          max: 100
+        }),
+        sets: faker.random.number({
+          type: Number,
+          min: 0,
+          max: 10
+        }),
+        notes: faker.lorem.sentences(),
+        creator_id: null,
+        _categoryId: "5d879899becc660f5f514f4b"
+      },
+      {
+        name: faker.random.word(),
+        restTime: faker.random.number({
+          min: 30,
+          max: 240
+        }),
+        weight: faker.random.number({
+          min: 0,
+          max: 1000
+        }),
+        reps: faker.random.number({
+          min: 0,
+          max: 100
+        }),
+        sets: faker.random.number({
+          type: Number,
+          min: 0,
+          max: 10
+        }),
+        notes: faker.lorem.sentences(),
+        creator_id: null,
+        _categoryId: "5d879899becc660f5f514f4b"
+      },
+      {
+        name: faker.random.word(),
+        restTime: faker.random.number({
+          min: 30,
+          max: 240
+        }),
+        weight: faker.random.number({
+          min: 0,
+          max: 1000
+        }),
+        reps: faker.random.number({
+          min: 0,
+          max: 100
+        }),
+        sets: faker.random.number({
+          type: Number,
+          min: 0,
+          max: 10
+        }),
+        notes: faker.lorem.sentences(),
+        creator_id: null,
+        _categoryId: "5d879899becc660f5f514f4b"
+      },
+      {
+        name: faker.random.word(),
+        restTime: faker.random.number({
+          min: 30,
+          max: 240
+        }),
+        weight: faker.random.number({
+          min: 0,
+          max: 1000
+        }),
+        reps: faker.random.number({
+          min: 0,
+          max: 100
+        }),
+        sets: faker.random.number({
+          type: Number,
+          min: 0,
+          max: 10
+        }),
+        notes: faker.lorem.sentences(),
+        creator_id: null,
+        _categoryId: "5d879899becc660f5f514f4b"
       }
     ],
     (err, result) => {
