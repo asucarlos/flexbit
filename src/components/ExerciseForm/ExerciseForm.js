@@ -48,11 +48,13 @@ class ExerciseForm extends Component {
           </p>
         </div>
         <div className="field">
-          <label className="label">Reps</label>
+          <label name="sets" className="label">
+            Sets (8 Reps)
+          </label>
           <div className="control has-icons-left">
             <input
               className="input"
-              name="reps"
+              name="sets"
               type="number"
               placeholder="3"
               min="0"

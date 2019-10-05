@@ -1,7 +1,7 @@
 import React from "react";
 
 const Exercise = ({ exercise }) => {
-  const { name, weight, reps, restTime, id } = exercise;
+  const { name, weight, sets, restTime, id } = exercise;
   const parsedRestTime = time => {
     const minutes = Math.floor(time / 60);
     const seconds = time - minutes * 60;
@@ -30,7 +30,7 @@ const Exercise = ({ exercise }) => {
         <br />
       </div>
       <footer className="card-footer">
-        <p className="card-footer-item">Reps: {reps} Pounds</p>
+        <p className="card-footer-item">Sets: {sets} Pounds</p>
         <p className="card-footer-item">Weight: {weight}</p>
         <p className="card-footer-item">
           Rest Time: {parsedRestTime(restTime)}
