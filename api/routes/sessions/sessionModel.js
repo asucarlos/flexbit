@@ -2,20 +2,46 @@
 
 const mongoose = require("mongoose");
 const { Schema } = require("mongoose");
-const exerciseRef = require('../exercises/exerciseModel');
+// const exerciseRef = require("../exercises/exerciseModel");
 
-const sessionSchema = new Schema({
-  exercises: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: exerciseRef
-  }],
-  start_time: {
-    type: Date,
+const exerciseSchema = new Schema({
+  name: {
+    type: String,
+    require: true
+  },
+  restTime: {
+    type: Number,
+    min: 0,
+    max: 480
+  },
+  weight: {
+    type: Number,
+    min: 0,
+    require: true
+  },
+  reps: {
+    type: Number,
+    min: 0,
     required: true
   },
+  // after mvp
+  creator_id: {
+    type: String
+    // ??? how can we change this to mongo_id?
+  }
+  // _categoryId: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: categoryRef
+  // }
+});
+
+const sessionSchema = new Schema({
+  exercises: [exerciseSchema],
+  start_time: {
+    type: Date
+  },
   end_time: {
-    type: Date,
-    required: true
+    type: Date
   }
 });
 

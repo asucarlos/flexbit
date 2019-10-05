@@ -17,6 +17,23 @@ code {
     monospace;
 }
 
-.message:not(:last-child){
+.message:not(:last-child) {
   margin-bottom: 0;
+}
+
+#exercise-form {
+  .has-addons {
+    .control:not(:last-child) {
+      flex-grow: 1;
+    }
+  }
+}
+
+.container {
+  width: 90%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  @media screen and (min-width: 750px) {
+    max-width: 600px;
+  }
 }
