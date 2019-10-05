@@ -7,20 +7,25 @@ class ExerciseList extends Component {
     this.state = {
       noResultText: "",
       noResultClasses: ""
-    }
+    };
   }
 
-   componentDidMount() {
-    const noRes = setTimeout(()=> {
-        this.setState({
-          noResultText: "It looks like no exercises were loaded! <strong>Double Check Server Connection</strong>",
-          noResultClasses: "notification is-danger"
-        });
-    },
-    1000
-    );
+  componentDidMount() {
+    const noRes = setTimeout(() => {
+      this.setState({
+        noResultText:
+          "It looks like no exercises were loaded! <strong>Double Check Server Connection</strong>",
+        noResultClasses: "notification is-danger"
+      });
+    }, 1000);
     return noRes;
   }
+
+  exerciseEl = exerciseList => {
+    return exerciseList.map((exercise, i) => (
+      <Exercise key={i} exercise={exercise} />
+    ));
+  };
 
   componentWillUnmount() {
     clearInterval(this.setTimeout);
@@ -30,13 +35,13 @@ class ExerciseList extends Component {
     const { exerciseList } = this.props;
 
     return (
-      <section className="box">
+      <section className="container">
         <h1 className="title">Exercise List</h1>
-        {exerciseList
-          ? exerciseList.map((exercise, i) => (
-              <Exercise key={i} exercise={exercise} />
-            ))
-          : <div className={this.state.noResClasses}>{this.state.noResText}</div>}
+        {exerciseList ? (
+          <ul>{this.exerciseEl(exerciseList)}</ul>
+        ) : (
+          <div className={this.state.noResClasses}>{this.state.noResText}</div>
+        )}
       </section>
     );
   }

@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import ExerciseForm from "../ExerciseForm";
 import WelcomeSection from "../WelcomeSection/";
+import Session from "../Session/";
 
 class Homepage extends Component {
   state = {
     exerciseSelected: "",
     reps: 0,
     weight: 0,
+    restTime: 0,
     session: []
   };
 
@@ -22,9 +24,10 @@ class Homepage extends Component {
   handleSubmit = async e => {
     e.preventDefault();
     const exerciseObj = {
-      exerciseName: this.state.exerciseSelected,
+      name: this.state.exerciseSelected,
       reps: this.state.reps,
-      weight: this.state.weight
+      weight: this.state.weight,
+      restTime: this.state.restTime
     };
 
     const newSession = [...this.state.session];
@@ -37,6 +40,8 @@ class Homepage extends Component {
       weight: 0
     });
 
+    console.log(this.state);
+
     document.getElementById("exercise-form").reset();
   };
 
@@ -46,12 +51,17 @@ class Homepage extends Component {
     return (
       <div className="container">
         {this.props.user ? (
-          <ExerciseForm
-            exerciseList={this.props.exerciseList}
-            setInitialExercise={this.setInitialExercise}
-            handleChange={this.handleChange}
-            handleSubmit={this.handleSubmit}
-          />
+          <>
+            {this.state.session.length > 0 ? (
+              <Session exerciseList={this.state.session} />
+            ) : null}
+            <ExerciseForm
+              exerciseList={this.props.exerciseList}
+              setInitialExercise={this.setInitialExercise}
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+            />
+          </>
         ) : (
           <WelcomeSection />
         )}

@@ -63,9 +63,11 @@ class ExerciseForm extends Component {
             </span>
           </div>
         </div>
-        <div className="field">
-          <label className="label">Weight</label>
-          <div className="control has-icons-left">
+        <label name="weight" className="label">
+          Weight
+        </label>
+        <div className="field has-addons">
+          <p className="control has-icons-left">
             <input
               className="input"
               name="weight"
@@ -77,10 +79,37 @@ class ExerciseForm extends Component {
             <span className="icon is-left">
               <i className="fas fa-weight-hanging"></i>
             </span>
-          </div>
+          </p>
+          <p className="control">
+            <span className="button is-static">Pounds</span>
+          </p>
+        </div>
+        <label name="restTime" className="label">
+          Rest Time
+        </label>
+        <div className="field has-addons">
+          <p className="control has-icons-left">
+            <input
+              className="input"
+              name="restTime"
+              type="number"
+              placeholder="60"
+              min="0"
+              onChange={handleChange}
+            />
+            <span className="icon is-left">
+              <i class="fas fa-stopwatch"></i>
+            </span>
+          </p>
+          <p className="control">
+            <span className="button is-static">Sec</span>
+          </p>
         </div>
         <p className="control">
-          <button className="button is-primary" onSubmit={handleSubmit}>
+          <button
+            className="button is-primary is-fullwidth"
+            onSubmit={handleSubmit}
+          >
             Submit
           </button>
         </p>

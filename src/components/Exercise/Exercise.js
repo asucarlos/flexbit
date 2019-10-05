@@ -5,10 +5,10 @@ const Exercise = ({ exercise }) => {
   const parsedRestTime = time => {
     const minutes = Math.floor(time / 60);
     const seconds = time - minutes * 60;
-    return minutes > 0 ? `${minutes}min ${seconds}sec` : `${seconds}sec`;
+    return minutes > 0 ? `${minutes}min ${seconds}sec` : `${seconds} sec`;
   };
   return (
-    <div key={id} className="card">
+    <li key={id} className="card">
       <header className="card-header">
         <p className="card-header-title">{name}</p>
         <div href="#" className="card-header-icon" aria-label="more options">
@@ -30,13 +30,13 @@ const Exercise = ({ exercise }) => {
         <br />
       </div>
       <footer className="card-footer">
-        <p className="card-footer-item">Reps: {reps}</p>
+        <p className="card-footer-item">Reps: {reps} Pounds</p>
         <p className="card-footer-item">Weight: {weight}</p>
         <p className="card-footer-item">
           Rest Time: {parsedRestTime(restTime)}
         </p>
       </footer>
-    </div>
+    </li>
   );
 };
 
