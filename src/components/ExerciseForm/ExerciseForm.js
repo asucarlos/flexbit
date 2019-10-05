@@ -48,7 +48,7 @@ class ExerciseForm extends Component {
           </p>
         </div>
         <div className="field">
-          <label name="sets" className="label">
+          <label name="reps" className="label">
             Reps
           </label>
           <div className="control has-icons-left">
