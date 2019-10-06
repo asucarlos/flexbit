@@ -10,31 +10,31 @@ class Homepage extends Component {
     sets: 0,
     weight: 0,
     restTime: 0,
-    session: []
+    // session: []
     // for development so you don't have to fill in the form everytime
-    // session: [
-    //   {
-    //     name: "one",
-    //     reps: "8",
-    //     restTime: "6",
-    //     sets: 3,
-    //     weight: 5
-    //   },
-    //   {
-    //     name: "two",
-    //     reps: "8",
-    //     restTime: "6",
-    //     sets: 6,
-    //     weight: 7
-    //   },
-    //   {
-    //     name: "override",
-    //     reps: "8",
-    //     restTime: "6",
-    //     sets: 3,
-    //     weight: 4
-    //   }
-    // ]
+    session: [
+      {
+        name: "one",
+        reps: "8",
+        restTime: "6",
+        sets: 3,
+        weight: 5
+      },
+      {
+        name: "two",
+        reps: "8",
+        restTime: "6",
+        sets: 6,
+        weight: 7
+      },
+      {
+        name: "override",
+        reps: "8",
+        restTime: "6",
+        sets: 3,
+        weight: 4
+      }
+    ]
   };
 
   handleChange = e => {

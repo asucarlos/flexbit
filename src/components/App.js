@@ -11,11 +11,11 @@ class App extends Component {
     super(props);
 
     this.state = {
-      loginActive: false,
-      user: false
+      // loginActive: false,
+      // user: false
       // switch to skip login for development
-      // loginActive: true,
-      // user: true
+      loginActive: true,
+      user: true
     };
 
     this.fetchExerciseList();

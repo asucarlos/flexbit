@@ -23,7 +23,7 @@ class ExerciseList extends Component {
 
   exerciseEl = exerciseList => {
     return exerciseList.map((exercise, i) => (
-      <Exercise key={i} exercise={exercise} />
+      <Exercise key={i} exercise={exercise} canDelete={false} />
     ));
   };
 

@@ -4,7 +4,7 @@ import Exercise from "../Exercise";
 const Session = ({ exerciseList }) => {
   const exerciseEl = exerciseList => {
     return exerciseList.map((exercise, i) => {
-      return <Exercise key={i} exercise={exercise} />;
+      return <Exercise key={i} exercise={exercise} canDelete={true} />;
     });
   };
 

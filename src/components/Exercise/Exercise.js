@@ -1,6 +1,6 @@
 import React from "react";
 
-const Exercise = ({ exercise }) => {
+const Exercise = ({ exercise, canDelete }) => {
   const { name, weight, reps, sets, restTime, notes, id } = exercise;
   const parsedRestTime = time => {
     const minutes = Math.floor(time / 60);
@@ -13,7 +13,11 @@ const Exercise = ({ exercise }) => {
         <p className="card-header-title">{name}</p>
         <div href="#" className="card-header-icon" aria-label="more options">
           <span className="icon card-header-icon">
-            <i className="fas fa-times" aria-hidden="true"></i>
+            {canDelete ? (
+              <i className="fas fa-times" aria-hidden="true"></i>
+            ) : (
+              <i class="fas fa-edit"></i>
+            )}
           </span>
         </div>
       </header>
