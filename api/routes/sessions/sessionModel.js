@@ -24,15 +24,19 @@ const exerciseSchema = new Schema({
     min: 0,
     required: true
   },
+  sets: {
+    type: Number,
+    min: 0,
+    required: true
+  },
+  notes: {
+    type: String
+  },
   // after mvp
   creator_id: {
     type: String
     // ??? how can we change this to mongo_id?
   }
-  // _categoryId: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: categoryRef
-  // }
 });
 
 const sessionSchema = new Schema({
