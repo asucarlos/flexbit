@@ -6,6 +6,10 @@
   "scripts": {
     "init": "node scripts/init.js",
     "test": "react-scripts test",
+    "start": "nodemon ./index.js --ignore src/",
+    "server": "nodemon ./index.js --ignore src/",
+    "build": "react-scripts build",
+    "heroku-postbuild": "npm install && npm run build",
     "start:server": "nodemon api/server.js --ignore client",
     "start:client": "react-scripts start",
     "build:client": "react-scripts build"
