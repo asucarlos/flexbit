@@ -38,23 +38,8 @@ class Homepage extends Component {
 
     this.setState({
       session: newSession,
-      exerciseSelected: this.props.exerciseList[0]["name"],
-      // reps: 0,
-      // sets: 0,
-      // weight: 0
+      exerciseSelected: this.props.exerciseList[0]["name"]
     });
-
-    if (newSession) {
-      const exerciseTime = 5
-      let timeTotal = newSession.map((total) => {
-        return total.sets * total.restTime + total.reps * exerciseTime;
-      }).reduce((sum, totalTime) => {
-        return sum + totalTime;
-      });
-      this.setState({
-        totalTime: timeTotal
-      });
-    }
 
     console.log(this.state);
 
@@ -71,7 +56,6 @@ class Homepage extends Component {
             {this.state.session.length > 0 ? (
               <Session 
                 exerciseList={this.state.session}
-                estimateTime={this.state.totalTime}
               />
             ) : null}
             <ExerciseForm
