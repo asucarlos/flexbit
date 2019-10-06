@@ -75,7 +75,9 @@ class Homepage extends Component {
         {this.props.user ? (
           <>
             {this.state.session.length > 0 ? (
-              <Session exerciseList={this.state.session} />
+              <Session 
+                exerciseList={this.state.session}
+              />
             ) : null}
             <ExerciseForm
               exerciseList={this.props.exerciseList}
