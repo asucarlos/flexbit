@@ -56,7 +56,7 @@ class ExerciseForm extends Component {
               className="input"
               name="reps"
               type="number"
-              placeholder="3"
+              placeholder="8"
               min="0"
               onChange={handleChange}
             />
@@ -74,7 +74,7 @@ class ExerciseForm extends Component {
               className="input"
               name="sets"
               type="number"
-              placeholder="8"
+              placeholder="3"
               min="0"
               onChange={handleChange}
             />
@@ -101,7 +101,7 @@ class ExerciseForm extends Component {
             </span>
           </p>
           <p className="control">
-            <span className="button is-static">Pounds</span>
+            <span className="button is-static">lbs</span>
           </p>
         </div>
         <label name="restTime" className="label">
@@ -118,7 +118,7 @@ class ExerciseForm extends Component {
               onChange={handleChange}
             />
             <span className="icon is-left">
-              <i class="fas fa-stopwatch"></i>
+              <i className="fas fa-stopwatch"></i>
             </span>
           </p>
           <p className="control">

@@ -27,9 +27,7 @@ const Exercise = ({ exercise }) => {
         <p className="card-footer-item">Reps: {reps}</p>
         <p className="card-footer-item">Sets: {sets}</p>
         <p className="card-footer-item">Weight: {weight} lbs</p>
-        <p className="card-footer-item">
-          Rest Time: {parsedRestTime(restTime)}
-        </p>
+        <p className="card-footer-item">Rest: {parsedRestTime(restTime)}</p>
       </footer>
     </li>
   );
