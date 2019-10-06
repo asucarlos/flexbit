@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/HackerYou/con-ed-full-stack/precache-manifest.ffb41c96e85a10bc3e95cdd71f849bb2.js"
+  "/HackerYou/con-ed-full-stack/precache-manifest.106d8c0862fb8b8d417f65701dc512e9.js"
 );
 
 self.addEventListener('message', (event) => {
