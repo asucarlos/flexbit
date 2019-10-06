@@ -1,5 +1,6 @@
 import React from "react";
 import Exercise from "../Exercise";
+import { getToken } from "../../services/tokenService";
 
 const Session = ({ exerciseList }) => {
   const exerciseEl = exerciseList => {
@@ -8,8 +9,22 @@ const Session = ({ exerciseList }) => {
     });
   };
 
-  const saveSession = () => {
-    console.log(exerciseList);
+  const saveSession = async () => {
+    try {
+      console.log(exerciseList);
+      const session = await Axios.post(`/api/sessions`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`
+        },
+        body: {
+          exercises: exerciseList,
+          date: Date.now()
+        }
+      });
+      console.log(session);
+    } catch (e) {
+      console.error(e.message);
+    }
   };
 
   return (

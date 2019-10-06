@@ -28,3 +28,11 @@ module.exports = async (req, res, next) => {
     }
   }
 };
+
+// fetch('/', {
+//   body: {
+//     headers: {
+//       'Authorization': 'Bearer token...'
+//     }
+//   }
+// })

@@ -41,6 +41,11 @@ const exerciseSchema = new Schema({
 
 const sessionSchema = new Schema({
   exercises: [exerciseSchema],
+  date: {
+    type: Date,
+    required: true
+  },
+  // after mvp
   start_time: {
     type: Date
   },

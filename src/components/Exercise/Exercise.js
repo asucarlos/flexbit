@@ -11,15 +11,19 @@ const Exercise = ({ exercise, canDelete }) => {
     <li key={id} className="card">
       <header className="card-header">
         <p className="card-header-title">{name}</p>
-        <div href="#" className="card-header-icon" aria-label="more options">
-          <span className="icon card-header-icon">
-            {canDelete ? (
+        {canDelete ? (
+          <a className="card-header-icon " aria-label="delete exercise">
+            <span className="icon card-header-icon">
               <i className="fas fa-times" aria-hidden="true"></i>
-            ) : (
+            </span>
+          </a>
+        ) : (
+          <a className="card-header-icon " aria-label="edit exercise">
+            <span className="icon card-header-icon">
               <i class="fas fa-edit"></i>
-            )}
-          </span>
-        </div>
+            </span>
+          </a>
+        )}
       </header>
       {notes ? (
         <div className="card-content message is-primary">
