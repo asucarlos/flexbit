@@ -10,7 +10,8 @@ class Homepage extends Component {
     sets: 0,
     weight: 0,
     restTime: 0,
-    session: []
+    session: [],
+    totalTime: 0
   };
 
   handleChange = e => {
@@ -38,10 +39,22 @@ class Homepage extends Component {
     this.setState({
       session: newSession,
       exerciseSelected: this.props.exerciseList[0]["name"],
-      reps: 0,
-      sets: 0,
-      weight: 0
+      // reps: 0,
+      // sets: 0,
+      // weight: 0
     });
+
+    if (newSession) {
+      const exerciseTime = 5
+      let timeTotal = newSession.map((total) => {
+        return total.sets * total.restTime + total.reps * exerciseTime;
+      }).reduce((sum, totalTime) => {
+        return sum + totalTime;
+      });
+      this.setState({
+        totalTime: timeTotal
+      });
+    }
 
     console.log(this.state);
 
@@ -56,7 +69,10 @@ class Homepage extends Component {
         {this.props.user ? (
           <>
             {this.state.session.length > 0 ? (
-              <Session exerciseList={this.state.session} />
+              <Session 
+                exerciseList={this.state.session}
+                estimateTime={this.state.totalTime}
+              />
             ) : null}
             <ExerciseForm
               exerciseList={this.props.exerciseList}
