@@ -36,10 +36,9 @@ router.use("/api/history", historyRoutes);
 router.use("/api/sessions", sessionRoutes);
 
 router.use("/", express.static(path.join(__dirname, "../build")));
-// router.use("/", express.static("../build/index.html"));
-// router.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../build/index.html"));
-// });
+router.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 
 // 6. Create a server from express instance
 const server = http.createServer(router);
