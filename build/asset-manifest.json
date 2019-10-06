@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/HackerYou/con-ed-full-stack/static/css/main.d74b3165.chunk.css",
-    "main.js": "/HackerYou/con-ed-full-stack/static/js/main.d2142706.chunk.js",
-    "main.js.map": "/HackerYou/con-ed-full-stack/static/js/main.d2142706.chunk.js.map",
-    "runtime~main.js": "/HackerYou/con-ed-full-stack/static/js/runtime~main.b006e774.js",
-    "runtime~main.js.map": "/HackerYou/con-ed-full-stack/static/js/runtime~main.b006e774.js.map",
-    "static/js/2.d5fc3ba2.chunk.js": "/HackerYou/con-ed-full-stack/static/js/2.d5fc3ba2.chunk.js",
-    "static/js/2.d5fc3ba2.chunk.js.map": "/HackerYou/con-ed-full-stack/static/js/2.d5fc3ba2.chunk.js.map",
-    "index.html": "/HackerYou/con-ed-full-stack/index.html",
-    "precache-manifest.106d8c0862fb8b8d417f65701dc512e9.js": "/HackerYou/con-ed-full-stack/precache-manifest.106d8c0862fb8b8d417f65701dc512e9.js",
-    "service-worker.js": "/HackerYou/con-ed-full-stack/service-worker.js",
-    "static/css/main.d74b3165.chunk.css.map": "/HackerYou/con-ed-full-stack/static/css/main.d74b3165.chunk.css.map",
-    "static/media/index.scss": "/HackerYou/con-ed-full-stack/static/media/fa-solid-900.c2801fb4.svg",
-    "static/media/giphy.gif": "/HackerYou/con-ed-full-stack/static/media/giphy.9bd6c6cc.gif"
+    "main.css": "/static/css/main.7c71a550.chunk.css",
+    "main.js": "/static/js/main.aaf10c57.chunk.js",
+    "main.js.map": "/static/js/main.aaf10c57.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.4650420b.js",
+    "runtime~main.js.map": "/static/js/runtime~main.4650420b.js.map",
+    "static/js/2.484f4145.chunk.js": "/static/js/2.484f4145.chunk.js",
+    "static/js/2.484f4145.chunk.js.map": "/static/js/2.484f4145.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.065f732a47a5f65a9e900a939ab13861.js": "/precache-manifest.065f732a47a5f65a9e900a939ab13861.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.7c71a550.chunk.css.map": "/static/css/main.7c71a550.chunk.css.map",
+    "static/media/index.scss": "/static/media/fa-solid-900.c2801fb4.svg",
+    "static/media/giphy.gif": "/static/media/giphy.9bd6c6cc.gif"
   }
 }
