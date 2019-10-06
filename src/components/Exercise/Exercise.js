@@ -1,17 +1,25 @@
 import React from "react";
 import TimeParser from "../../helper/TimeParser"
 
-const Exercise = ({ exercise}) => {
+const Exercise = ({ exercise, canDelete }) => {
   const { name, weight, reps, sets, restTime, notes, id } = exercise;
   return (
     <li key={id} className="card">
       <header className="card-header">
         <p className="card-header-title">{name}</p>
-        <div href="#" className="card-header-icon" aria-label="more options">
-          <span className="icon card-header-icon">
-            <i className="fas fa-times" aria-hidden="true"></i>
-          </span>
-        </div>
+        {canDelete ? (
+          <a className="card-header-icon " aria-label="delete exercise">
+            <span className="icon card-header-icon">
+              <i className="fas fa-times" aria-hidden="true"></i>
+            </span>
+          </a>
+        ) : (
+          <a className="card-header-icon " aria-label="edit exercise">
+            <span className="icon card-header-icon">
+              <i class="fas fa-edit"></i>
+            </span>
+          </a>
+        )}
       </header>
       {notes ? (
         <div className="card-content message is-primary">

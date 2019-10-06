@@ -4,6 +4,7 @@ const express = require("express");
 const router = express.Router();
 const { listSessions, createSession } = require("./sessionService");
 const requireAuth = require("../../middleware/requireAuth");
+const getUserFromToken = require("../../middleware/getUserFromToken");
 
 // GET /session
 router.route("/").get(requireAuth, async (req, res, next) => {
@@ -18,15 +19,17 @@ router.route("/").get(requireAuth, async (req, res, next) => {
 });
 
 // Post Sessions
-router.route("/").post(requireAuth, async (req, res, next) => {
-  try {
-    const session = await createSession(req.body.data);
-    res.status(201).send({
-      data: session
-    });
-  } catch (e) {
-    next(e);
-  }
-});
+router
+  .route("/")
+  .post(requireAuth, getUserFromToken, async (req, res, next) => {
+    try {
+      const session = await createSession(req.body.data, req.user);
+      res.status(201).send({
+        data: session
+      });
+    } catch (e) {
+      next(e);
+    }
+  });
 
 exports.router = router;

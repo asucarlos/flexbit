@@ -41,10 +41,7 @@ class App extends Component {
     }
   }
 
-  setUser = token =>
-    this.setState({ user: token }, () => {
-      console.log(this.state);
-    });
+  setUser = token => this.setState({ user: token }, () => {});
 
   logout = () => this.setState({ user: false });
 

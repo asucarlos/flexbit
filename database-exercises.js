@@ -368,7 +368,6 @@ MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
         if (err) {
           throw err;
         }
-        console.log("items", items);
         client.close();
       });
     }

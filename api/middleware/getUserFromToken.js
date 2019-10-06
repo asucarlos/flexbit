@@ -15,9 +15,9 @@ module.exports = async (req, res, next) => {
     } else {
       try {
         const [prefix, token] = authHeader.split(" ");
-        const decoded = await tokenService.verifyToken(token);
-        if (decoded) {
-          req.token = decoded;
+        const decodedUser = await tokenService.decodeToken(token);
+        if (decodedUser) {
+          req.user = decodedUser;
           next();
         } else {
           next(new Error("you are not authorized"));

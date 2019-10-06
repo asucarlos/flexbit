@@ -2,6 +2,7 @@
 
 const mongoose = require("mongoose");
 const { Schema } = require("mongoose");
+const userRef = require("../users/userModel");
 // const exerciseRef = require("../exercises/exerciseModel");
 
 const exerciseSchema = new Schema({
@@ -41,11 +42,21 @@ const exerciseSchema = new Schema({
 
 const sessionSchema = new Schema({
   exercises: [exerciseSchema],
+  date: {
+    type: Date
+    // required: true
+  },
+  // after mvp
   start_time: {
     type: Date
   },
   end_time: {
     type: Date
+  },
+  _userId: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    require: true
   }
 });
 

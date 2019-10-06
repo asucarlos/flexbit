@@ -3,29 +3,6 @@ import React, { Component } from "react";
 // import Exercise from "../Exercise";
 
 class ExerciseForm extends Component {
-  // handleStart = async e => {
-  //   e.preventDefault();
-  //   const { exerciseSelected, reps, weight } = this.state;
-  //   console.log(exerciseSelected, reps, weight);
-  //   try {
-  //     // post the session to the db
-  //     const res = await axios.post(`/api/sessions/`, {
-  //       data: {
-  //         exercises: []
-  //       }
-  //     });
-
-  //     // we might not need to do that?
-
-  //     // do a get request to get the exercises used this this session
-  //     // also send the token with the request
-  //     // set state with this session
-  //     // render the session
-  //   } catch (e) {
-  //     this.setState({ message: e });
-  //   }
-  // };
-
   render() {
     const { exerciseList, handleChange, handleSubmit } = this.props;
     return (
