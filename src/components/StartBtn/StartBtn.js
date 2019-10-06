@@ -9,7 +9,7 @@ const headers = {
 class StartBtn extends Component {
   saveSession = async () => {
     try {
-      await axios.post(
+      const sessionSaved = await axios.post(
         `/api/sessions`,
         {
           data: {
@@ -21,6 +21,8 @@ class StartBtn extends Component {
           headers: headers
         }
       );
+
+      console.log(sessionSaved);
     } catch (e) {
       console.error(e.message);
     }

@@ -1,5 +1,5 @@
 import React from "react";
-import TimeParser from "../../helper/TimeParser"
+import TimeParser from "../../helper/TimeParser";
 
 const Exercise = ({ exercise, canDelete }) => {
   const { name, weight, reps, sets, restTime, notes, id } = exercise;
@@ -8,17 +8,17 @@ const Exercise = ({ exercise, canDelete }) => {
       <header className="card-header">
         <p className="card-header-title">{name}</p>
         {canDelete ? (
-          <a className="card-header-icon " aria-label="delete exercise">
+          <button className="card-header-icon " aria-label="delete exercise">
             <span className="icon card-header-icon">
               <i className="fas fa-times" aria-hidden="true"></i>
             </span>
-          </a>
+          </button>
         ) : (
-          <a className="card-header-icon " aria-label="edit exercise">
+          <button className="card-header-icon " aria-label="edit exercise">
             <span className="icon card-header-icon">
-              <i class="fas fa-edit"></i>
+              <i className="fas fa-edit"></i>
             </span>
-          </a>
+          </button>
         )}
       </header>
       {notes ? (
@@ -31,9 +31,7 @@ const Exercise = ({ exercise, canDelete }) => {
         <p className="card-footer-item">Reps: {reps}</p>
         <p className="card-footer-item">Sets: {sets}</p>
         <p className="card-footer-item">Weight: {weight} lbs</p>
-        <p className="card-footer-item">
-          Rest Time: {TimeParser(restTime)}
-        </p>
+        <p className="card-footer-item">Rest Time: {TimeParser(restTime)}</p>
       </footer>
     </li>
   );
