@@ -11,6 +11,30 @@ class Homepage extends Component {
     weight: 0,
     restTime: 0,
     session: []
+    // for development so you don't have to fill in the form everytime
+    // session: [
+    //   {
+    //     name: "one",
+    //     reps: "8",
+    //     restTime: "6",
+    //     sets: 3,
+    //     weight: 5
+    //   },
+    //   {
+    //     name: "two",
+    //     reps: "8",
+    //     restTime: "6",
+    //     sets: 6,
+    //     weight: 7
+    //   },
+    //   {
+    //     name: "override",
+    //     reps: "8",
+    //     restTime: "6",
+    //     sets: 3,
+    //     weight: 4
+    //   }
+    // ]
   };
 
   handleChange = e => {
@@ -37,13 +61,8 @@ class Homepage extends Component {
 
     this.setState({
       session: newSession,
-      exerciseSelected: this.props.exerciseList[0]["name"],
-      reps: 0,
-      sets: 0,
-      weight: 0
+      exerciseSelected: this.props.exerciseList[0]["name"]
     });
-
-    console.log(this.state);
 
     document.getElementById("exercise-form").reset();
   };
