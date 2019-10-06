@@ -5,7 +5,6 @@ const tokenService = require("../../utils/tokenService");
 
 router.route("/signup").post(async (req, res, next) => {
   try {
-    console.log(req.body.data);
     const user = await userService.createUser(req.body.data);
     res.status(201).json({
       data: [user]
@@ -20,7 +19,6 @@ router.route("/login").post(async (req, res, next) => {
     const user = await userService.isUser(req.body.data);
     if (user) {
       const token = await tokenService.issueToken(user);
-      console.log(token);
       res.status(200).json({
         data: { token }
       });

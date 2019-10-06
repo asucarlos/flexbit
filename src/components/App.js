@@ -11,11 +11,11 @@ class App extends Component {
     super(props);
 
     this.state = {
-      // loginActive: false,
-      // user: false
+      loginActive: false,
+      user: false
       // switch to skip login for development
-      loginActive: true,
-      user: true
+      // loginActive: true,
+      // user: true
     };
 
     this.fetchExerciseList();
@@ -41,10 +41,7 @@ class App extends Component {
     }
   }
 
-  setUser = token =>
-    this.setState({ user: token }, () => {
-      console.log(this.state);
-    });
+  setUser = token => this.setState({ user: token }, () => {});
 
   logout = () => this.setState({ user: false });
 
