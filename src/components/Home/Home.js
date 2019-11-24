@@ -61,7 +61,7 @@ class Homepage extends Component {
 
     this.setState({
       session: newSession,
-      exerciseSelected: this.props.exerciseList[0]["name"]
+      // exerciseSelected: this.props.exerciseList[0]["name"]
     });
 
     document.getElementById("exercise-form").reset();
