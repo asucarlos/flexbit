@@ -1,21 +1,22 @@
 {
-  "name": "flexbit",
+  "name": "tomato-project",
   "version": "1.0.0",
   "description": "HackerYou Fullstack Masterclass Project",
   "main": "index.js",
   "scripts": {
-    "init": "node scripts/init.js",
     "test": "react-scripts test",
     "build": "react-scripts build",
-    "start": "nodemon api/server.js --ignore src/",
-    "server": "nodemon api/server.js --ignore src/",
+    "start": "node api/server.js --ignore src/",
+    "server": "node api/server.js --ignore src/",
     "heroku-postbuild": "npm install && npm run build",
-    "start:server": "nodemon api/server.js --ignore client",
+    "start:server": "node api/server.js --ignore client",
     "start:client": "react-scripts start",
-    "build:client": "react-scripts build"
+    "build:client": "react-scripts build",
+    "git:remote:set": "git remote set-url origin https://github.com/HackerYou/project-repo.git",
+    "git:remote:create": "git remote add origin https://github.com/HackerYou/project-repo.git"
   },
   "keywords": [],
-  "author": "Clint and Melody",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",
@@ -54,5 +55,13 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
     "redux-devtools": "^3.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HackerYou/project-repo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HackerYou/project-repo/issues"
+  },
+  "homepage": "https://github.com/HackerYou/project-repo#readme"
 }
