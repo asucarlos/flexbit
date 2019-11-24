@@ -6,10 +6,10 @@
   "scripts": {
     "test": "react-scripts test",
     "build": "react-scripts build",
-    "start": "nodemon api/server.js --ignore src/",
-    "server": "nodemon api/server.js --ignore src/",
+    "start": "node api/server.js --ignore src/",
+    "server": "node api/server.js --ignore src/",
     "heroku-postbuild": "npm install && npm run build",
-    "start:server": "nodemon api/server.js --ignore client",
+    "start:server": "node api/server.js --ignore client",
     "start:client": "react-scripts start",
     "build:client": "react-scripts build",
     "git:remote:set": "git remote set-url origin https://github.com/HackerYou/project-repo.git",
